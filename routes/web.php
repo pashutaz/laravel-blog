@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task_id}', 'TasksController@show');
+Route::get('/tasks/{task}', 'TasksController@show');
 
 
 //Route::get('/tasks', function () {
