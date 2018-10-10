@@ -5,5 +5,5 @@ namespace App;
 
 class Post extends Model
 {
-
+	
 }

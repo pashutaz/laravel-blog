@@ -8,13 +8,15 @@ use App\POST;
 class PostController extends Controller
 {
 	public function index(){
-		return view('posts.index');
+		$posts = Post::latest()->get();
+
+		return view('posts.index', compact('posts'));
 	}
 
 
-	public function show()	
+	public function show(Post $post)	
 	{
-		return view('posts.show');
+		return view('posts.show', compact('post'));
 	}
 
 
@@ -25,20 +27,16 @@ class PostController extends Controller
 
 	public function store()
 	{
-		// // Create a new post using request data
-		// $post = new POST;
-		// $post->title = request('post-title');
-		// $posts->body = request('post-body');
-
-		// // Save to database
-		// $post->save();
+		$this->validate(request(), [
+			'post-title' => 'required',
+			'post-body' => 'required'
+		]);
 
 		POST::create([
 			'title' => request('post-title'),
 			'body' => request('post-body'),
 		]);
 
-		// redirect to home page
 		return redirect('/');
 	}
 

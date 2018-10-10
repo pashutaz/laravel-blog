@@ -22,7 +22,7 @@
     {{-- @include('components.nav') --}}
 
     <main role="main" class="container">
-      @include('components.header')
+      @include('components.nav')
 
       <div class="row">
         <div class="col-md-8 blog-main">
