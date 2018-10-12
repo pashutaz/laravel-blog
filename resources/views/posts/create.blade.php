@@ -13,12 +13,12 @@
 
 		<div class="form-group">
 			<label for="post-title">Post title</label>
-			<input type="text" class="form-control" id="post-title" name="post-title" >
+			<input type="text" class="form-control" id="post-title" name="post-title" required>
 		</div>
 
 		<div class="form-group">
 			<label for="post-body">Body</label>
-			<textarea class="form-control" id="post-body" rows="3" name="post-body" ></textarea>		
+			<textarea class="form-control" id="post-body" rows="3" name="post-body" required></textarea>		
 		</div>
 
 		<div class="form-group">
