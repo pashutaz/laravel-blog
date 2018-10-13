@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Model extends Eloquent
 {
-	protected $guarded = ['user_id'];
-    // protected $fillable = ['title', 'body'];
+	protected $guarded = ['id'];
+    // protected $fillable = ['title', 'body', 'user_id'];
 }

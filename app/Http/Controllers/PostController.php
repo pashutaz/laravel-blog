@@ -7,6 +7,11 @@ use App\POST;
 
 class PostController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth')->except(['index', 'show']);
+	}
+
 	public function index(){
 		$posts = Post::latest()->get();
 
@@ -32,12 +37,12 @@ class PostController extends Controller
 			'post-body' => 'required'
 		]);
 
-		POST::create([
-			'title' => request('post-title'),
-			'body' => request('post-body'),
-		]);
+		// TODO:: request
+		auth()->user()->publish(
+			new Post(['title'=>request('post-title'), 'body'=>request('post-body')])
+		);
 
-		return redirect('/');
+		return redirect()->home();
 	}
 
 
